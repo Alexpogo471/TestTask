@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    android:orientation="vertical"
+    tools:context=".activities.MainActivity">
+
+    <TextView
+        android:id="@+id/textViewGibddLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textViewCheckFinesLogo"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="87dp"
+        android:layout_marginBottom="@dimen/spacing_normal_16"
+        android:text="@string/fines_gibdd"
+        android:textColor="@android:color/white"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textViewCheckFinesLogo"
+        android:layout_width="302dp"
+        android:layout_height="74dp"
+        android:layout_above="@+id/buttonEnterData"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="54dp"
+        android:layout_marginBottom="249dp"
+        android:text="@string/check_fines_of_official_source"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/buttonEnterData"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="@dimen/spacing_small_8"
+        android:layout_marginRight="@dimen/spacing_small_8"
+        android:layout_marginBottom="14dp"
+        android:background="@drawable/btn_enter_data"
+        android:text="@string/enter_data"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        style="@style/style_logo_45x45"
+        android:id="@+id/imageViewGibdd"
+        android:layout_marginStart="40dp"
+        app:srcCompat="@drawable/gibdd" />
+
+    <ImageView
+        android:id="@+id/imageViewTreasury"
+        style="@style/style_logo_45x45"
+        android:layout_above="@+id/buttonEnterData"
+        android:layout_marginStart="99dp"
+        android:layout_marginBottom="60dp"
+        android:layout_toEndOf="@+id/imageViewGibdd"
+        app:srcCompat="@drawable/treasury" />
+
+    <ImageView
+        android:id="@+id/imageViewGosuslugi"
+        style="@style/style_logo_45x45"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="51dp"
+        app:srcCompat="@drawable/gosuslugi" />
+
+    <TextView
+        android:id="@+id/textViewGibdd"
+        android:layout_above="@+id/buttonEnterData"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="40dp"
+        android:text="@string/gibdd"
+        style="@style/style_name_for_logo" />
+
+    <TextView
+        style="@style/style_name_for_logo"
+        android:id="@+id/textViewTreasury"
+        android:layout_above="@+id/buttonEnterData"
+        android:layout_marginStart="74dp"
+        android:layout_toEndOf="@+id/textViewGibdd"
+        android:text="@string/treasury" />
+
+    <TextView
+        style="@style/style_name_for_logo"
+        android:id="@+id/textViewGosuslugi"
+        android:layout_above="@+id/buttonEnterData"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="40dp"
+        android:text="@string/gosuslugi" />
+
+
+</RelativeLayout>

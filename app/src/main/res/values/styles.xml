@@ -1,0 +1,47 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#2A4480</item>
+        <item name="colorPrimaryDark">#06266F</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme2" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">#2A4480</item>
+        <item name="colorPrimaryDark">#06266F</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="style_logo_45x45">
+        <item name="android:layout_width">45dp</item>
+        <item name="android:layout_height">45dp</item>
+        <item name="android:layout_above">@+id/buttonEnterData</item>
+        <item name="android:layout_marginBottom">60dp</item>
+    </style>
+
+    <style name="style_name_for_logo">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">35dp</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="style_editText_number_ts">
+        <item name="colorControlActivated">#007929</item>
+        <item name="colorControlHighlight">#007929</item>
+    </style>
+
+    <style name="style_for_page">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_margin">@dimen/spacing_normal_16</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+</resources>

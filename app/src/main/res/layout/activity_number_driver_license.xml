@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activities.RegistrationNumberActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/spacing_normal_16"
+            android:layout_marginRight="@dimen/spacing_normal_16"
+            android:background="@color/colorPrimaryDark"
+            android:src="@drawable/vu" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/spacing_normal_16"
+            android:layout_marginBottom="@dimen/spacing_normal_16"
+            android:text="Введите номер водительского удостоверения"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+
+            android:id="@+id/numberDsEditText"
+            style="@style/style_editText_number_ts"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:inputType="textCapCharacters"
+            android:layout_marginStart="@dimen/spacing_small_8"
+            android:layout_marginTop="@dimen/spacing_small_8"
+            android:layout_marginEnd="@dimen/spacing_small_8"
+            android:layout_marginBottom="@dimen/spacing_small_8"
+            android:hint="00 АА 000000"
+            android:maxLength="11"/>
+
+        <Button
+            android:id="@+id/skipBtnDs"
+            android:layout_width="128dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/numberDsEditText"
+            android:layout_margin="@dimen/spacing_small_8"
+            android:layout_marginStart="@dimen/spacing_small_8"
+            android:layout_marginLeft="@dimen/spacing_small_8"
+            android:layout_marginTop="@dimen/spacing_small_8"
+            android:layout_marginEnd="@dimen/spacing_small_8"
+            android:layout_marginRight="@dimen/spacing_small_8"
+            android:layout_marginBottom="@dimen/spacing_small_8"
+            android:layout_toLeftOf="@+id/nextBtnDs"
+            android:text="Пропустить" />
+
+        <Button
+            android:id="@+id/nextBtnDs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/numberDsEditText"
+            android:layout_alignParentRight="true"
+            android:layout_margin="@dimen/spacing_small_8"
+            android:layout_marginStart="@dimen/spacing_small_8"
+            android:layout_marginLeft="@dimen/spacing_small_8"
+            android:layout_marginTop="@dimen/spacing_small_8"
+            android:layout_marginEnd="@dimen/spacing_small_8"
+            android:layout_marginRight="@dimen/spacing_small_8"
+            android:layout_marginBottom="@dimen/spacing_small_8"
+            android:background="@drawable/btn_enter_data"
+            android:text="далее"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+
+
+</LinearLayout>

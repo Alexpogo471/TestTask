@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">TestTask</string>
+    <string name="fines_gibdd">Штрафы ГИБДД</string>
+    <string name="check_fines_of_official_source">Проверьте штрафы в официальных источниках</string>
+    <string name="enter_data">ВВЕСТИ ДАННЫЕ</string>
+    <string name="gibdd">ГИБДД</string>
+    <string name="treasury">Казначейство</string>
+    <string name="gosuslugi">Госуслуги</string>
+    <string name="agreement">Переходя на следующий экран, вы принимаете пользовательское соглашение и даете согласие на обработку персональных данных</string>
+    <string name="input_ts_number">Укажите регистрационный номер ТС</string>
+    <string name="next">далее</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="push_of_new_fines_page">Получайте push-уведомления о новых штрафах</string>
+    <string name="pay_fines_across_app_page">Оплачивайте штрафы через приложение</string>
+    <string name="sale_pay_in_20_day">Скидка 50% при оплате в течении 20 дней</string>
+    <string name="get_printout_how_in_bank">Получайте квитанцию, как в банке</string>
+    <string name="repayment_in_state_database">Гарантия погашения в государственной базе данных</string>
+    <string name="follow_rules_of_the_road">Соблюдайте правила дорожного движения</string>
+    <string name="see_fines">Узнать штрафы</string>
+</resources>
