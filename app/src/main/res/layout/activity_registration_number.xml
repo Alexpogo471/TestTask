@@ -47,7 +47,7 @@
             android:layout_marginTop="@dimen/spacing_small_8"
             android:layout_marginEnd="@dimen/spacing_small_8"
             android:layout_marginBottom="@dimen/spacing_small_8"
-            android:hint="А00АА 77"
+            android:hint="А000АА 77"
             android:maxLength="11"/>
 
     <Button
@@ -63,7 +63,7 @@
             android:layout_marginRight="@dimen/spacing_small_8"
             android:layout_marginBottom="@dimen/spacing_small_8"
             android:layout_toLeftOf="@+id/nextBtn"
-            android:text="Пропустить" />
+            android:text="@string/skip" />
 
         <Button
             android:id="@+id/nextBtn"
@@ -79,7 +79,7 @@
             android:layout_marginRight="@dimen/spacing_small_8"
             android:layout_marginBottom="@dimen/spacing_small_8"
             android:background="@drawable/btn_enter_data"
-            android:text="@string/next"
+            android:text="@string/next_btn"
             android:textColor="@android:color/white"
             android:textStyle="bold" />
 

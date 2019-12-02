@@ -15,7 +15,6 @@ public class MainActivity extends AppCompatActivity {
 
     private Button buttonEnterData;
 
-    private static final String MY_SETTINGS = "my_settings";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

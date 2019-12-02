@@ -33,4 +33,21 @@
     <string name="menu_tools">Tools</string>
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
+
+    <string name="error">Номерной знак введен неккоректно</string>
+    <string name="error1">Error</string>
+    <string name="driver_license">Водительское удостоверение</string>
+    <string name="car_number">Номерной знак</string>
+    <string name="number_driver_license">Номер водительского удостоверения</string>
+    <string name="cars">Автомобили</string>
+    <string name="add_car">Добавить автомобиль</string>
+    <string name="drivers">Водители</string>
+    <string name="add_driver">Добавить водителя</string>
+    <string name="decree">По поставновлению</string>
+    <string name="pay_by_decree_number">Оплатить по номеру постановления</string>
+    <string name="section_in_development">Раздел в разработке</string>
+    <string name="input_number_driver_license">Введите номер водительского удостоверения</string>
+    <string name="skip">Пропустить</string>
+    <string name="next_btn">далее</string>
+    <string name="next_btn_land_dl">далее</string>
 </resources>

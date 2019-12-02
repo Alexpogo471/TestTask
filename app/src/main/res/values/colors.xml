@@ -5,6 +5,6 @@
     <color name="colorAccent">#D81B60</color>
     <color name="colorButton">#FF7800</color>
     <color name="colorRipple">#FFCC73</color>
-    <color name="colorEditTextNumberTs">#007929</color>
+    <color name="colorGreen">#007929</color>
     <color name="colorWhite">#ffffff</color>
 </resources>

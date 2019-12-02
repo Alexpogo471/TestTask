@@ -28,7 +28,7 @@
             android:layout_marginLeft="@dimen/spacing_normal_16"
             android:layout_marginBottom="@dimen/spacing_normal_16"
             android:layout_marginStart="99dp"
-            android:text="Введите номер водительского удостоверения"
+            android:text="@string/input_number_driver_license"
             android:textColor="@android:color/white"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -51,7 +51,7 @@
             android:layout_marginEnd="@dimen/spacing_small_8"
             android:layout_marginBottom="@dimen/spacing_small_8"
             android:hint="00 АА 000000"
-            android:maxLength="11"/>
+            android:maxLength="12"/>
 
         <Button
             android:id="@+id/skipBtnDs"
@@ -66,7 +66,7 @@
             android:layout_marginRight="@dimen/spacing_small_8"
             android:layout_marginBottom="@dimen/spacing_small_8"
             android:layout_toLeftOf="@+id/nextBtnDs"
-            android:text="Пропустить" />
+            android:text="@string/skip" />
 
         <Button
             android:id="@+id/nextBtnDs"
@@ -82,7 +82,7 @@
             android:layout_marginRight="@dimen/spacing_small_8"
             android:layout_marginBottom="@dimen/spacing_small_8"
             android:background="@drawable/btn_enter_data"
-            android:text="далее"
+            android:text="@string/next_btn_land_dl"
             android:textColor="@android:color/white"
             android:textStyle="bold" />
 
