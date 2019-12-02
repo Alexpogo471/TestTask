@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -15,10 +16,12 @@ import ru.pogorelov.alexey.R;
 
 public class NumberDriverLicenseActivity extends AppCompatActivity {
 
-    private Button skipBtnDs;
+    private Button skipBtnDs, nextBtnDs;
     Context context;
     AlertDialog.Builder dialog;
     EditText numberDsEditText;
+    SharedPreferences preferences;
+    private final String SAVED_NUMBER_DL = "SAVED_NUMBER_DL";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,8 +31,10 @@ public class NumberDriverLicenseActivity extends AppCompatActivity {
         numberDsEditText = findViewById(R.id.numberDsEditText);
         numberDsEditText.requestFocus();
 
-        skipBtnDs = findViewById(R.id.skipBtnDs);
+        numberDsEditText = findViewById(R.id.numberDsEditText);
+        preferences = getSharedPreferences("NumberDL",MODE_PRIVATE);
 
+        skipBtnDs = findViewById(R.id.skipBtnDs);
         skipBtnDs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -55,6 +60,21 @@ public class NumberDriverLicenseActivity extends AppCompatActivity {
                 dialog.show();
             }
 
+        });
+
+        nextBtnDs = findViewById(R.id.nextBtnDs);
+        nextBtnDs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String numberDL = numberDsEditText.getText().toString();
+                if (!numberDL.isEmpty()) {
+                    SharedPreferences.Editor ed = preferences.edit();
+                    ed.putString(SAVED_NUMBER_DL, numberDsEditText.getText().toString());
+                    ed.commit();
+                    Intent intent = new Intent(NumberDriverLicenseActivity.this, WalkthroughtContainerActivity.class);
+                    startActivity(intent);
+                }
+            }
         });
     }
 }

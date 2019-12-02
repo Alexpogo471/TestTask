@@ -1,12 +1,15 @@
 package ru.pogorelov.alexey.activities;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,10 +18,12 @@ import ru.pogorelov.alexey.R;
 
 public class RegistrationNumberActivity extends AppCompatActivity {
 
-    private Button skipBtn;
+    private Button skipBtn, nextBtn;
     Context context;
     AlertDialog.Builder dialog;
     EditText numberTsEditText;
+    SharedPreferences preferences;
+    private final String SAVED_NUMBER_TS = "SAVED_NUMBER_TS";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +31,7 @@ public class RegistrationNumberActivity extends AppCompatActivity {
         setContentView(R.layout.activity_registration_number);
 
         numberTsEditText = findViewById(R.id.numberTsEditText);
-        numberTsEditText.requestFocus();
+        preferences = getSharedPreferences("NumberTs",MODE_PRIVATE);
 
 //        final String regex = "/^[АВЕКМНОРСТУХ]\\d{3}(?<!000)[АВЕКМНОРСТУХ]{2}\\d{2,3}$/ui";
 //        InputFilter filter = new InputFilter() {
@@ -36,6 +41,22 @@ public class RegistrationNumberActivity extends AppCompatActivity {
 //            }
 //        };
 //        numberTsEditText.setFilters(new InputFilter[]{filter});
+
+
+        nextBtn = findViewById(R.id.nextBtn);
+        nextBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String numberTs = numberTsEditText.getText().toString();
+                if (!numberTs.isEmpty()) {
+                    SharedPreferences.Editor ed = preferences.edit();
+                    ed.putString(SAVED_NUMBER_TS,numberTsEditText.getText().toString());
+                    ed.commit();
+                    Intent intent = new Intent(RegistrationNumberActivity.this, NumberDriverLicenseActivity.class);
+                    startActivity(intent);
+                }
+            }
+        });
 
 
 
@@ -66,8 +87,5 @@ public class RegistrationNumberActivity extends AppCompatActivity {
             }
 
         });
-
-
     }
-
 }

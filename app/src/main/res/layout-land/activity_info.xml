@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_weight="1">
+        android:layout_weight="0">
 
         <TextView
             android:layout_width="wrap_content"
@@ -26,17 +26,14 @@
             android:textColor="@color/colorPrimaryDark"
             android:text="TextView"
             android:padding="@dimen/spacing_normal_16"
-            android:layout_margin="@dimen/spacing_large_24"
             android:visibility="gone"/>
 
         <Button
             android:id="@+id/buttonAddCar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/spacing_normal_16"
+            android:layout_margin="@dimen/spacing_small_8"
             android:text="Добавить автомобиль"/>
-
-
 
     </LinearLayout>
 
@@ -44,7 +41,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_weight="1">
+        android:layout_weight="0">
 
         <TextView
             android:layout_width="wrap_content"
@@ -60,14 +57,13 @@
             android:textColor="@color/colorPrimaryDark"
             android:text="TextView"
             android:padding="@dimen/spacing_normal_16"
-            android:layout_margin="@dimen/spacing_large_24"
             android:visibility="gone"/>
 
         <Button
             android:id="@+id/buttonAddDriver"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/spacing_normal_16"
+            android:layout_marginStart="@dimen/spacing_normal_16"
             android:text="Добавить водителя"/>
 
 
@@ -75,9 +71,9 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_weight="20">
+        android:layout_weight="10">
 
         <TextView
             android:layout_width="wrap_content"
@@ -87,13 +83,13 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/spacing_normal_16"
+            android:layout_marginStart="@dimen/spacing_normal_16"
             android:text="Оплатить по номеру постановления"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/spacing_large_24"
+            android:layout_margin="@dimen/spacing_small_8"
             android:layout_gravity="end"
             android:text="Раздел в разработке"/>
 

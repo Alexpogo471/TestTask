@@ -11,8 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".activities.InfoActivity"
-            android:theme="@style/Theme.AppCompat.Light.DarkActionBar"></activity>
+        <activity
+            android:name=".activities.InfoActivity"
+            android:theme="@style/AppTheme2" />
         <activity android:name=".activities.WalkthroughtContainerActivity" />
         <activity
             android:name=".activities.NumberDriverLicenseActivity"

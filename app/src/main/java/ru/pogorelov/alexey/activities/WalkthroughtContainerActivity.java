@@ -64,7 +64,7 @@ public class WalkthroughtContainerActivity extends AppCompatActivity {
         buttonInputData.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent();
+                Intent intent = new Intent(WalkthroughtContainerActivity.this,InfoActivity.class);
                 startActivity(intent);
             }
         });

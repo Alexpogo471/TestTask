@@ -9,8 +9,8 @@
     </style>
 
     <style name="AppTheme2" parent="Theme.AppCompat.Light.DarkActionBar">
-        <item name="colorPrimary">#2A4480</item>
-        <item name="colorPrimaryDark">#06266F</item>
+        <item name="colorPrimary">#06266F</item>
+        <item name="colorPrimaryDark">#2A4480</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
@@ -43,5 +43,14 @@
         <item name="android:textSize">24sp</item>
         <item name="android:textStyle">bold</item>
     </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
 </resources>
