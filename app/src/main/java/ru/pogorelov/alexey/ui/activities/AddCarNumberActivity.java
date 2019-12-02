@@ -31,6 +31,7 @@ public class AddCarNumberActivity extends AppCompatActivity {
         preferences = getSharedPreferences("NumberTs", MODE_PRIVATE);
 
         editInputTs = findViewById(R.id.editInputTs);
+        editInputTs.requestFocus();
         editInputTs.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {

@@ -33,6 +33,7 @@ public class RegistrationNumberActivity extends AppCompatActivity {
 
         numberTsEditText = findViewById(R.id.numberTsEditText);
         preferences = getSharedPreferences("NumberTs", MODE_PRIVATE);
+        numberTsEditText.requestFocus();
         numberTsEditText.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -50,26 +51,16 @@ public class RegistrationNumberActivity extends AppCompatActivity {
                     numberTsEditText.setError("Номерной знак введен некорректно");
                     nextBtn.setOnClickListener(null);
                 }
+                if (validate(numberTsEditText.getText().toString())){
+                    buttonNextlistener();
+                }
 
             }
         });
 
 
         nextBtn = findViewById(R.id.nextBtn);
-        nextBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String numberTs = numberTsEditText.getText().toString();
-                if (!numberTs.isEmpty()) {
-                    SharedPreferences.Editor ed = preferences.edit();
-                    ed.putString(SAVED_NUMBER_TS, numberTsEditText.getText().toString());
-                    ed.commit();
-                    Intent intent = new Intent(RegistrationNumberActivity.this, NumberDriverLicenseActivity.class);
-                    startActivity(intent);
-                }
-                else numberTsEditText.setError("Поле не может быть пустым");
-            }
-        });
+        buttonNextlistener();
 
 
         skipBtn = findViewById(R.id.skipBtn);
@@ -104,5 +95,21 @@ public class RegistrationNumberActivity extends AppCompatActivity {
         Pattern p = Pattern.compile("^\\d{4}(?<!0000)[АВЕКМНОРСТУХ]{2}\\d{2}$");
         Matcher m = p.matcher(st);
         return m.find();
+    }
+
+    public void buttonNextlistener(){
+        nextBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String numberTs = numberTsEditText.getText().toString();
+                if (!numberTs.isEmpty()) {
+                    SharedPreferences.Editor ed = preferences.edit();
+                    ed.putString(SAVED_NUMBER_TS, numberTsEditText.getText().toString());
+                    ed.commit();
+                    Intent intent = new Intent(RegistrationNumberActivity.this, NumberDriverLicenseActivity.class);
+                    startActivity(intent);
+                }
+            }
+        });
     }
 }

@@ -13,8 +13,10 @@
         tools:ignore="GoogleAppIndexingWarning">
         <activity
             android:name=".ui.activities.AddNumberDriverActivity"
+            android:windowSoftInputMode="stateVisible"
             android:theme="@style/AppTheme2" />
         <activity android:name=".ui.activities.AddCarNumberActivity"
+            android:windowSoftInputMode="stateVisible"
             android:theme="@style/AppTheme2"/>
         <activity
             android:name=".ui.activities.SplashActivity"

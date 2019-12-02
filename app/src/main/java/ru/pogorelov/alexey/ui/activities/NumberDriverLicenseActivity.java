@@ -56,6 +56,9 @@ public class NumberDriverLicenseActivity extends AppCompatActivity {
                     numberDsEditText.setError("Номер ВУ введен некорректно");
                     nextBtnDs.setOnClickListener(null);
                 }
+                if (validate(numberDsEditText.getText().toString())){
+                    buttonNextListener();
+                }
             }
         });
 
@@ -87,6 +90,16 @@ public class NumberDriverLicenseActivity extends AppCompatActivity {
         });
 
         nextBtnDs = findViewById(R.id.nextBtnDs);
+        buttonNextListener();
+    }
+
+    public static boolean validate(String st) {
+        Pattern p = Pattern.compile("^\\d{2}\\d{2}\\d{6}$");
+        Matcher m = p.matcher(st);
+        return m.find();
+    }
+
+    public void buttonNextListener(){
         nextBtnDs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -100,11 +113,5 @@ public class NumberDriverLicenseActivity extends AppCompatActivity {
                 }
             }
         });
-    }
-
-    public static boolean validate(String st) {
-        Pattern p = Pattern.compile("^\\d{2}\\d{2}\\d{6}$");
-        Matcher m = p.matcher(st);
-        return m.find();
     }
 }

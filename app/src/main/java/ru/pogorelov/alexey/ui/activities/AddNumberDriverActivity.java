@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -31,6 +32,7 @@ public class AddNumberDriverActivity extends AppCompatActivity {
         preferences = getSharedPreferences("NumberDL", MODE_PRIVATE);
 
         editInputDl = findViewById(R.id.editInputDl);
+        editInputDl.requestFocus();
         editInputDl.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
