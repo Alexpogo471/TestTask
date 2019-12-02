@@ -1,4 +1,4 @@
-package ru.pogorelov.alexey.activities;
+package ru.pogorelov.alexey.ui.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,6 +11,9 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.EditText;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import ru.pogorelov.alexey.R;
 
@@ -41,10 +44,9 @@ public class AddNumberDriverActivity extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable s) {
-                if (s.length() <= 0) {
-                    editInputDl.setError("Поле не может быть пустым");
-                } else {
-                    editInputDl.setError(null);
+                if (!validate(editInputDl.getText().toString())){
+                    editInputDl.setError("Номер ВУ введен некорректно");
+
                 }
             }
         });
@@ -54,7 +56,7 @@ public class AddNumberDriverActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu_main_ts,menu);
+        inflater.inflate(R.menu.menu_main_dl,menu);
         return true;
     }
 
@@ -72,4 +74,11 @@ public class AddNumberDriverActivity extends AppCompatActivity {
 
         }
     }
+
+    public static boolean validate(String st) {
+        Pattern p = Pattern.compile("^\\d{2}\\d{2}\\d{6}$");
+        Matcher m = p.matcher(st);
+        return m.find();
+    }
+
 }

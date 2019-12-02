@@ -1,4 +1,4 @@
-package ru.pogorelov.alexey.activities;
+package ru.pogorelov.alexey.ui.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentPagerAdapter;

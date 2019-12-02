@@ -1,6 +1,5 @@
-package ru.pogorelov.alexey.activities;
+package ru.pogorelov.alexey.ui.activities;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -49,7 +48,7 @@ public class InfoActivity extends AppCompatActivity {
             textViewNumberDL.setVisibility(View.VISIBLE);
             buttonAddDriver.setVisibility(View.GONE);
         } else {
-            buttonAddCar.setVisibility(View.VISIBLE);
+            buttonAddDriver.setVisibility(View.VISIBLE);
         }
 
         buttonAddCar.setOnClickListener(new View.OnClickListener() {

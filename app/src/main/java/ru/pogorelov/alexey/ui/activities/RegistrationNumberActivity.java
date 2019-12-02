@@ -1,24 +1,17 @@
-package ru.pogorelov.alexey.activities;
+package ru.pogorelov.alexey.ui.activities;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.text.Editable;
-import android.text.InputFilter;
-import android.text.Spanned;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -28,7 +21,6 @@ import ru.pogorelov.alexey.R;
 public class RegistrationNumberActivity extends AppCompatActivity {
 
     private Button skipBtn, nextBtn;
-    Context context;
     AlertDialog.Builder dialog;
     EditText numberTsEditText;
     SharedPreferences preferences;
@@ -54,11 +46,9 @@ public class RegistrationNumberActivity extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable s) {
-                if (s.length() <= 0) {
-                    numberTsEditText.setError("Поле не может быть пустым");
+                if (!validate(numberTsEditText.getText().toString())){
+                    numberTsEditText.setError("Номерной знак введен некорректно");
                     nextBtn.setOnClickListener(null);
-                } else {
-                    numberTsEditText.setError(null);
                 }
 
             }
@@ -87,12 +77,11 @@ public class RegistrationNumberActivity extends AppCompatActivity {
         skipBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                context = RegistrationNumberActivity.this;
                 String message = "Если вы не введете регистрационный номер ТС, то вы не сможете следить за штрафами, выписанными на автомобиль";
                 String button1 = "Ввести номер";
                 String button2 = "Пропустить";
 
-                dialog = new AlertDialog.Builder(context);
+                dialog = new AlertDialog.Builder(RegistrationNumberActivity.this);
                 dialog.setMessage(message);
                 dialog.setPositiveButton(button1, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int arg1) {
@@ -111,9 +100,9 @@ public class RegistrationNumberActivity extends AppCompatActivity {
         });
     }
 
-//    public static boolean reg(String st) {
-//        Pattern p = Pattern.compile("/^[АВЕКМНОРСТУХ]\\\\d{3}(?<!000)[АВЕКМНОРСТУХ]{2}\\\\d{2,3}$/ui");
-//        Matcher m = p.matcher(st);
-//        return m.matches();
-//    }
+    public static boolean validate(String st) {
+        Pattern p = Pattern.compile("^\\d{4}(?<!0000)[АВЕКМНОРСТУХ]{2}\\d{2}$");
+        Matcher m = p.matcher(st);
+        return m.find();
+    }
 }

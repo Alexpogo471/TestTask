@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".activities.RegistrationNumberActivity">
+    tools:context=".ui.activities.RegistrationNumberActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -50,8 +50,9 @@
             android:layout_marginTop="@dimen/spacing_small_8"
             android:layout_marginEnd="@dimen/spacing_small_8"
             android:layout_marginBottom="@dimen/spacing_small_8"
-            android:hint="00 АА 000000"
-            android:maxLength="12"/>
+            android:hint="@string/example_number_driver_license_land"
+            android:maxLength="12"
+            tools:ignore="TextFields" />
 
         <Button
             android:id="@+id/skipBtnDs"

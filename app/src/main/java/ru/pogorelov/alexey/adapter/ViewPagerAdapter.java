@@ -5,12 +5,12 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
-import ru.pogorelov.alexey.fragments.PreviewPage1Fragment;
-import ru.pogorelov.alexey.fragments.PreviewPage2Fragment;
-import ru.pogorelov.alexey.fragments.PreviewPage3Fragment;
-import ru.pogorelov.alexey.fragments.PreviewPage4Fragment;
-import ru.pogorelov.alexey.fragments.PreviewPage5Fragment;
-import ru.pogorelov.alexey.fragments.PreviewPage6Fragment;
+import ru.pogorelov.alexey.ui.fragments.PreviewPage1Fragment;
+import ru.pogorelov.alexey.ui.fragments.PreviewPage2Fragment;
+import ru.pogorelov.alexey.ui.fragments.PreviewPage3Fragment;
+import ru.pogorelov.alexey.ui.fragments.PreviewPage4Fragment;
+import ru.pogorelov.alexey.ui.fragments.PreviewPage5Fragment;
+import ru.pogorelov.alexey.ui.fragments.PreviewPage6Fragment;
 
 public class ViewPagerAdapter extends FragmentPagerAdapter {
 

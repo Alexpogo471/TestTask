@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".activities.RegistrationNumberActivity">
+    tools:context=".ui.activities.RegistrationNumberActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -43,12 +43,14 @@
             style="@style/style_editText_number_ts"
             android:layout_width="match_parent"
             android:layout_height="60dp"
+            android:inputType="textCapCharacters"
             android:layout_marginStart="@dimen/spacing_small_8"
             android:layout_marginTop="@dimen/spacing_small_8"
             android:layout_marginEnd="@dimen/spacing_small_8"
             android:layout_marginBottom="@dimen/spacing_small_8"
-            android:hint="А000АА 77"
-            android:maxLength="11"/>
+            android:hint="@string/example_number_car"
+            android:maxLength="11"
+            tools:ignore="TextFields" />
 
     <Button
         android:id="@+id/skipBtn"

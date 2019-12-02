@@ -50,4 +50,8 @@
     <string name="skip">Пропустить</string>
     <string name="next_btn">далее</string>
     <string name="next_btn_land_dl">далее</string>
+    <string name="example_number_car">4773ВА77</string>
+    <string name="example_number_car_land">4773ВА77</string>
+    <string name="example_number_driver_license">00 00 000000</string>
+    <string name="example_number_driver_license_land">00 АА 000000</string>
 </resources>

@@ -1,4 +1,4 @@
-package ru.pogorelov.alexey.activities;
+package ru.pogorelov.alexey.ui.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,6 +11,9 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.EditText;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import ru.pogorelov.alexey.R;
 
@@ -41,10 +44,8 @@ public class AddCarNumberActivity extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable s) {
-                if (s.length() <= 0) {
-                    editInputTs.setError("Поле не может быть пустым");
-                } else {
-                    editInputTs.setError(null);
+                if (!validate(editInputTs.getText().toString())){
+                    editInputTs.setError("Номерной знак введен некорректно");
                 }
             }
         });
@@ -70,5 +71,11 @@ public class AddCarNumberActivity extends AppCompatActivity {
             else editInputTs.setError("Поле не может быть пустым");
 
         }
+    }
+
+    public static boolean validate(String st) {
+        Pattern p = Pattern.compile("^\\d{4}(?<!0000)[АВЕКМНОРСТУХ]{2}\\d{2}$");
+        Matcher m = p.matcher(st);
+        return m.find();
     }
 }

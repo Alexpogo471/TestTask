@@ -1,4 +1,4 @@
-package ru.pogorelov.alexey.activities;
+package ru.pogorelov.alexey.ui.activities;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,9 +8,14 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import ru.pogorelov.alexey.R;
 
@@ -34,6 +39,26 @@ public class NumberDriverLicenseActivity extends AppCompatActivity {
         numberDsEditText = findViewById(R.id.numberDsEditText);
         preferences = getSharedPreferences("NumberDL",MODE_PRIVATE);
 
+        numberDsEditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (!validate(numberDsEditText.getText().toString())){
+                    numberDsEditText.setError("Номер ВУ введен некорректно");
+                    nextBtnDs.setOnClickListener(null);
+                }
+            }
+        });
+
         skipBtnDs = findViewById(R.id.skipBtnDs);
         skipBtnDs.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,7 +67,6 @@ public class NumberDriverLicenseActivity extends AppCompatActivity {
                 String message = "Если вы не введете регистрационный номер водительского удостоверения, то вы не сможете следить за штрафами, выписанными на водителя";
                 String button1 = "Ввести номер";
                 String button2 = "Пропустить";
-
                 dialog = new AlertDialog.Builder(context);
                 dialog.setMessage(message);
                 dialog.setPositiveButton(button1, new DialogInterface.OnClickListener() {
@@ -76,5 +100,11 @@ public class NumberDriverLicenseActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    public static boolean validate(String st) {
+        Pattern p = Pattern.compile("^\\d{2}\\d{2}\\d{6}$");
+        Matcher m = p.matcher(st);
+        return m.find();
     }
 }

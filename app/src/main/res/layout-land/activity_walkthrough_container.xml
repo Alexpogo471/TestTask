@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/colorPrimaryDark"
-    tools:context=".activities.WalkthroughtContainerActivity">
+    tools:context=".ui.activities.WalkthroughtContainerActivity">
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewPager"

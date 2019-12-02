@@ -12,12 +12,12 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity
-            android:name=".activities.AddNumberDriverActivity"
+            android:name=".ui.activities.AddNumberDriverActivity"
             android:theme="@style/AppTheme2" />
-        <activity android:name=".activities.AddCarNumberActivity"
+        <activity android:name=".ui.activities.AddCarNumberActivity"
             android:theme="@style/AppTheme2"/>
         <activity
-            android:name=".activities.SplashActivity"
+            android:name=".ui.activities.SplashActivity"
             android:theme="@style/SplashBackground">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,16 +26,16 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activities.InfoActivity"
+            android:name=".ui.activities.InfoActivity"
             android:theme="@style/AppTheme2" />
-        <activity android:name=".activities.WalkthroughtContainerActivity" />
+        <activity android:name=".ui.activities.WalkthroughtContainerActivity" />
         <activity
-            android:name=".activities.NumberDriverLicenseActivity"
+            android:name=".ui.activities.NumberDriverLicenseActivity"
             android:windowSoftInputMode="stateVisible" />
         <activity
-            android:name=".activities.RegistrationNumberActivity"
+            android:name=".ui.activities.RegistrationNumberActivity"
             android:windowSoftInputMode="stateVisible" />
-        <activity android:name=".activities.MainActivity" />
+        <activity android:name=".ui.activities.MainActivity" />
     </application>
 
 </manifest>
